@@ -30,14 +30,14 @@ class smartactions(Gtk.Application):
 
                 start, end = text_iface.getSelection(0)
                 text = text_iface.getText(start, end)
-                print("Choosed text:", text)
+                print("Choosed text:", repr(text))
                 GLib.idle_add(self.show_mainwindow)  # move GTK calls to the main thread
             except Exception:
                 traceback.print_exc()  # errors are being writing to the traceback.
 
         pyatspi.Registry.registerEventListener(
             selection_changed,
-            "object:text-selection-changed"
+            "object:text-caret-moved"
         )
 
     def show_mainwindow(self):
