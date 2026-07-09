@@ -3,150 +3,175 @@
 <interface>
   <!-- interface-name smartactions.ui -->
   <requires lib="gtk" version="4.20"/>
-  <object class="GtkWindow" id="mainwindow">
+  <object class="GtkWindow" id="main_window">
     <property name="default-height">40</property>
     <property name="default-width">50</property>
     <child>
       <object class="GtkBox">
         <property name="homogeneous">True</property>
         <child>
-          <object class="GtkButton" id="searchweb_button">
-            <property name="child">
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
               <object class="GtkBox">
-                <property name="homogeneous">True</property>
+                <property name="margin-bottom">5</property>
+                <property name="margin-top">5</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">file-search-symbolic</property>
+                  <object class="GtkLabel">
+                    <property name="margin-bottom">3</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkLabel">
-                    <property name="label">Search</property>
+                  <object class="GtkLabel" id="choosedtext_label"/>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkButton" id="searchweb_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">file-search-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Search</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="copy_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">edit-copy-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Copy</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="cut_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">edit-cut-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Cut</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="delete_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">edit-delete-remove</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Delete</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="uppercase_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">format-text-uppercase</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Uppercase</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="lowercase_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">format-text-lowercase</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Lowercase</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="clipboard_button_2">
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="homogeneous">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">clipboard</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Clipboard</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
                   </object>
                 </child>
               </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="copy_button">
-            <property name="child">
-              <object class="GtkBox">
-                <property name="homogeneous">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">edit-copy-symbolic</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label">Copy</property>
-                  </object>
-                </child>
-              </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="cut_button">
-            <property name="child">
-              <object class="GtkBox">
-                <property name="homogeneous">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">edit-cut-symbolic</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label">Cut</property>
-                  </object>
-                </child>
-              </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="delete_button">
-            <property name="child">
-              <object class="GtkBox">
-                <property name="homogeneous">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">edit-delete-remove</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label">Delete</property>
-                  </object>
-                </child>
-              </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="uppercase_button">
-            <property name="child">
-              <object class="GtkBox">
-                <property name="homogeneous">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">format-text-uppercase</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label">Uppercase</property>
-                  </object>
-                </child>
-              </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="lowercase_button">
-            <property name="child">
-              <object class="GtkBox">
-                <property name="homogeneous">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">format-text-lowercase</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label">Lowercase</property>
-                  </object>
-                </child>
-              </object>
-            </property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="clipboard_button">
-            <property name="child">
-              <object class="GtkBox">
-                <property name="homogeneous">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkImage">
-                    <property name="icon-name">clipboard</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label">Clipboard</property>
-                  </object>
-                </child>
-              </object>
-            </property>
+            </child>
           </object>
         </child>
       </object>
